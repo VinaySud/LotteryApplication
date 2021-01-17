@@ -1,0 +1,11 @@
+﻿@model List<int>
+
+<div class="text-center">
+    <h1 class="display-4">Random Number Generator</h1>
+    <p class="mb-5">Feeling Lucky? Here is a collection of unique random numbers chosen just for you</p>
+
+    @foreach (var item in Model)
+    {
+        <div class="numberCircle" data-val="-@item-">@item</div>
+    }
+</div>

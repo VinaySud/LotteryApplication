@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotteryApplication.Logic", "LotteryApplication.Logic\LotteryApplication.Logic.csproj", "{C049EE9A-4DD8-4D0C-A8BE-26EEA9028260}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotteryApplication.Web", "LotteryApplication.Web\LotteryApplication.Web.csproj", "{1C013709-8CA2-4D45-999F-F4A9978494FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{231A2723-FC38-4107-86F3-EBA7A15CE1F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{C5154DDB-E8F9-4D4D-838E-434A41C62D09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4CB99C60-5896-4355-A93E-0914B8DAAC95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotteryApplication.Tests", "LotteryApplication.Tests\LotteryApplication.Tests.csproj", "{698F38DF-B057-4824-884D-5E798A934EA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C049EE9A-4DD8-4D0C-A8BE-26EEA9028260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C049EE9A-4DD8-4D0C-A8BE-26EEA9028260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C049EE9A-4DD8-4D0C-A8BE-26EEA9028260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C049EE9A-4DD8-4D0C-A8BE-26EEA9028260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C013709-8CA2-4D45-999F-F4A9978494FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C013709-8CA2-4D45-999F-F4A9978494FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C013709-8CA2-4D45-999F-F4A9978494FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C013709-8CA2-4D45-999F-F4A9978494FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{698F38DF-B057-4824-884D-5E798A934EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698F38DF-B057-4824-884D-5E798A934EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698F38DF-B057-4824-884D-5E798A934EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698F38DF-B057-4824-884D-5E798A934EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C049EE9A-4DD8-4D0C-A8BE-26EEA9028260} = {231A2723-FC38-4107-86F3-EBA7A15CE1F4}
+		{1C013709-8CA2-4D45-999F-F4A9978494FF} = {C5154DDB-E8F9-4D4D-838E-434A41C62D09}
+		{698F38DF-B057-4824-884D-5E798A934EA1} = {4CB99C60-5896-4355-A93E-0914B8DAAC95}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA68DD0A-22D3-445E-A90B-9B9BCE476D46}
+	EndGlobalSection
+EndGlobal
