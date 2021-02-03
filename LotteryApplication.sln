@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{C5154DDB-E8F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4CB99C60-5896-4355-A93E-0914B8DAAC95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotteryApplication.Tests", "LotteryApplication.Tests\LotteryApplication.Tests.csproj", "{698F38DF-B057-4824-884D-5E798A934EA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotteryApplication.Tests", "LotteryApplication.Tests\LotteryApplication.Tests.csproj", "{698F38DF-B057-4824-884D-5E798A934EA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

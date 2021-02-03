@@ -1,4 +1,4 @@
-﻿@model List<int>
+﻿@model IEnumerable<LotteryApplication.Logic.Models.LotteryNumber>
 
 <div class="text-center">
     <h1 class="display-4">Random Number Generator</h1>
@@ -6,6 +6,6 @@
 
     @foreach (var item in Model)
     {
-        <div class="numberCircle" data-val="-@item-">@item</div>
+        <div class="numberCircle @item.Colour">@item.Number</div>
     }
 </div>

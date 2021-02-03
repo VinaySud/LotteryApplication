@@ -1,49 +1,41 @@
-using LotteryApplication.Logic;
+using LotteryApplication.Logic.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Linq;
+using Moq;
+using System.Collections.Generic;
+using LotteryApplication.Logic.Enumerations;
+using LotteryApplication.Logic.Models;
 
 namespace LotteryApplication.Tests
 {
-    /// <summary>
-    /// Simple unit test to ensure the random numbers returned is matching to exactly six numbers
-    /// </summary>
     [TestClass]
-    public class SimpleNumberGeneratorTests
+    public class SimpleLotteryTicketTests
     {
-        /// <summary>
-        /// Ensure the generator returns exactly 6 numbers
-        /// </summary>
-        [TestMethod]
-        public void SimpleNumberGenerator_Length_EqualsToSix()
-        {
-            var numberGenerator = new SimpleNumberGenerator();
-            var randomNumbers = numberGenerator.Random(6);
+        private readonly Mock<INumberGenerator> _numberGenerator;
+        private readonly Mock<IColourPicker> _colourPicker;        
 
-            Assert.AreEqual(6, randomNumbers.Count);
+        public SimpleLotteryTicketTests()
+        {
+            _numberGenerator = new Mock<INumberGenerator>();
+            _colourPicker = new Mock<IColourPicker>();
+
+            _numberGenerator.Setup(x => x.Draw(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<List<int>>())).Returns(1);
+            _colourPicker.Setup(x => x.Select(It.IsAny<int>())).Returns(Colour.Grey);
         }
 
         /// <summary>
-        /// Ensure that all 49 numbers generated are unique
+        /// Ensure the generator returns exactly the numbers provided
         /// </summary>
-        [TestMethod]        
-        public void SimpleNumberGenerator_UniqueNumbers_Success()
+        [DataTestMethod]
+        [DataRow(5)]
+        [DataRow(6)]
+        public void SimpleLotteryTicket_Length_EqualsToValueRequested(int totalNumberToGenerate)
         {
-            var numberGenerator = new SimpleNumberGenerator();
-            var randomNumbers = numberGenerator.Random(49);
-
-            Assert.AreEqual(randomNumbers.Distinct().Count(), randomNumbers.Count());
-        }
-
-        /// <summary>
-        /// Ensure we have an error when maximum number is exceeded
-        /// </summary>
-        [TestMethod]
-        [ExpectedException(typeof(Exception))]
-        public void SimpleNumberGenerator_ExceedMaximum_Failed()
-        {
-            var numberGenerator = new SimpleNumberGenerator();
-            numberGenerator.Random(50);
+            var lotterySettings = new LotterySettings { MinimumValue = 1, MaximumValue = 49, TotalNumbersToGenerate = totalNumberToGenerate };
+            var simpleLotteryTicket = new SimpleLotteryTicket(_numberGenerator.Object, _colourPicker.Object);
+            var randomNumbers = simpleLotteryTicket.Generate(lotterySettings);
+     
+            Assert.AreEqual(totalNumberToGenerate, randomNumbers.Count());
         }
     }
 }

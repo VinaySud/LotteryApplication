@@ -1,5 +1,4 @@
 using LotteryApplication.Logic;
-using LotteryApplication.Web.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,11 +20,7 @@ namespace LotteryApplication.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
-            // Get settings from appsettings.json
-            services.Configure<LotterySettings>(Configuration.GetSection("LotterySettings"));
-            
-            services.AddTransient<INumberGenerator, SimpleNumberGenerator>();
+            services.AddLotteryServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

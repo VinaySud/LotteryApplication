@@ -89,22 +89,27 @@ body {
     Depending on value returned, colour the numbers as required
 */
 
-.numberCircle[data-val *= "-1"]:not([data-val = "-1-"]) {
+.numberCircle.Grey {
+    border-color: grey;
+    background: grey;
+}
+
+.numberCircle.Blue {
     border-color: blue;
     background: blue;
 }
 
-.numberCircle[data-val *= "-2"]:not([data-val = "-2-"]) {
+.numberCircle.Pink {
     border-color: pink;
     background: pink;
 }
 
-.numberCircle[data-val *= "-3"]:not([data-val = "-3-"]) {
+.numberCircle.Green {
     border-color: green;
     background: green;
 }
 
-.numberCircle[data-val *= "-4"]:not([data-val = "-4-"]) {
+.numberCircle.Yellow {
     border-color: yellow;
     background: yellow;
     color: #666;
